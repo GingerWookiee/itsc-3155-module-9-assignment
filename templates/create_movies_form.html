@@ -5,5 +5,22 @@
 {% block body %}
 <h1 class="mb-5">Create Movie Rating</h1>
 <p class="mb-3">Create a movie rating below</p>
-<!-- TODO: Feature 2 -->
+
+<form>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Movie Name</label>
+        <input class="form-control" id="title" placeholder="Enter movie name" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Director</label>
+        <input type="number" class="form-control" id="director" placeholder="Enter movie director" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Rating</label>
+        <input type="number" class="form-control" id="rating" min="1" max="5" placeholder="Enter rating" required>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Save Rating</button>
+</form>
+
 {% endblock %}
