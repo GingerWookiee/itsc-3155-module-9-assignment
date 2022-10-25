@@ -10,6 +10,7 @@ movie_repository = get_movie_repository()
 movie_repository.create_movie('title1', 'director1', 1)
 movie_repository.create_movie('title2', 'director2', 2)
 movie_repository.create_movie('title3', 'director3', 3)
+movie_repository.create_movie('title4', 'director4', 4)
 
 
 @app.get('/')
