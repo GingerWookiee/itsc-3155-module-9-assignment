@@ -6,13 +6,6 @@ app = Flask(__name__)
 
 movie_repository = get_movie_repository()
 
-# hard-coded test code - comment out later
-movie_repository.create_movie('title1', 'director1', 1)
-movie_repository.create_movie('title2', 'director2', 2)
-movie_repository.create_movie('title3', 'director3', 3)
-movie_repository.create_movie('title4', 'director4', 4)
-
-
 @app.get('/')
 def index():
     return render_template('index.html')
@@ -39,4 +32,6 @@ def create_movie():
 @app.get('/movies/search')
 def search_movies():
     # TODO: Feature 3
-    return render_template('search_movies.html', search_active=True)
+    title = request.args.get('title')
+    movie = movie_repository.get_movie_by_title(title)
+    return render_template('search_movies.html', search_active=True, movie=movie)
